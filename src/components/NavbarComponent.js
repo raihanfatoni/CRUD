@@ -7,7 +7,6 @@ import {
   Nav,
   NavItem,
   NavLink,
-  NavbarText,
   Container,
 } from "reactstrap";
 
@@ -20,21 +19,33 @@ const NavbarComponent = (props) => {
     <div>
       <Navbar color="light" light expand="md">
         <Container>
-          <NavbarBrand href="/">City</NavbarBrand>
+          <NavbarBrand href="/">Home</NavbarBrand>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
               <NavItem>
-                <NavLink href="/Merchandise">Merchandise</NavLink>
+                <NavLink href="/city">City</NavLink>
+                <NavbarToggler onClick={toggle} />
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">
-                  About Me
-                </NavLink>
+                <NavLink href="/culinary">Culinary</NavLink>
               </NavItem>
-             
+              <NavItem>
+                <NavLink href="/culture">Culture</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/destination">Destination</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/marketplace">Market Place</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/merchandise">Merchandise</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/videovr">Video VR</NavLink>
+              </NavItem>
             </Nav>
-            <NavbarText>Admin</NavbarText>
           </Collapse>
         </Container>
       </Navbar>
