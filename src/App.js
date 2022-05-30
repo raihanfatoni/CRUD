@@ -13,6 +13,9 @@ import DestinationContainer from "./containers/DestinationContainer";
 import MarketplaceContainer from "./containers/MarketplaceContainer";
 import MerchandiseContainer from "./containers/MerchandiseContainer";
 import VideovrContainer from "./containers/VideovrContainer";
+import DetailCityContainer from "./containers/DetailCityContainer";
+import CreateCityContainer from "./containers/CreateCityContainer";
+import EditCityContainer from "./containers/EditCityContainer";
 
 export default class App extends Component {
   render() {
@@ -23,6 +26,9 @@ export default class App extends Component {
         <BrowserRouter>
           <Route path="/" exact component={HomeContainer} />
           <Route path="/city" exact component={CityContainer} />
+          <Route path="/detailcity/:id" exact component={DetailCityContainer} />
+          <Route path="/createcity" exact component={CreateCityContainer} />
+          <Route path="/editcity/:id" exact component={EditCityContainer} />
           <Route path="/culinary" exact component={CulinaryContainer} />
           <Route path="/culture" exact component={CultureContainer} />
           <Route path="/destinaion" exact component={DestinationContainer} />

@@ -19,6 +19,7 @@ export const getUsersList = () => {
             errorMessage: false,
           },
         });
+        
       })
       .catch(function (error) {
         dispatch({
@@ -47,6 +48,7 @@ export const getUserDetail = (id) => {
             errorMessage: false,
           },
         });
+        console.log(response.data)
       })
       .catch(function (error) {
         dispatch({

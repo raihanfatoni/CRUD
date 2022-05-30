@@ -1,10 +1,9 @@
 import {
-    GET_USERS_LIST,
-    GET_USER_DETAIL,
     GET_CITY_LIST,
     GET_CITY_DETAIL,
-    POST_USER_CREATE,
-    PUT_USER_EDIT,
+    POST_CITY_CREATE,
+    PUT_CITY_EDIT
+
   } from "../actions/cityAction";
   
   let initialState = {
@@ -33,19 +32,19 @@ import {
           errorCityDetail: action.payload.errorMessage,
         };
   
-      // case POST_USER_CREATE:
-      //   return {
-      //     ...state,
-      //     getResponDataUser: action.payload.data,
-      //     errorResponDataUser: action.payload.errorMessage,
-      //   };
+      case POST_CITY_CREATE:
+        return {
+          ...state,
+          getResponDataCity: action.payload.data,
+          errorResponDataCity: action.payload.errorMessage,
+        };
   
-      // case PUT_USER_EDIT:
-      //   return {
-      //     ...state,
-      //     getResponDataUser: action.payload.data,
-      //     errorResponDataUser: action.payload.errorMessage,
-      //   };
+      case PUT_CITY_EDIT:
+        return {
+          ...state,
+          getResponDataCity: action.payload.data,
+          errorResponDataCity: action.payload.errorMessage,
+        };
   
       default:
         return state;

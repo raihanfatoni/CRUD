@@ -12,6 +12,7 @@ import formReducer from "./reducers";
 import thunkMiddleware from "redux-thunk";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
 const store = configureStore(
         {reducer:formReducer},
         composeEnhancers(

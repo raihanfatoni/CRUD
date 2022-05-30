@@ -13,7 +13,8 @@ import paginationFactory from "react-bootstrap-table2-paginator";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import swal from 'sweetalert';
-import { deleteUser } from "../actions/userAction";
+import { deleteCity } from "../actions/cityAction";
+
 
 const { SearchBar } = Search;
 
@@ -27,7 +28,7 @@ const handleClick = (dispatch, id) => {
   })
   .then((willDelete) => {
     if (willDelete) {
-      dispatch(deleteUser(id))
+      dispatch(deleteCity(id))
       swal("Data City Sukses dihapus", {
         icon: "success",
       });
@@ -47,11 +48,10 @@ const defaultSorted = [
 
 const mapStateToProps = (state) => {
   return {
-    getCityList: state.getCityList,
-    errorCityList: state.errorCityList,
+    getCityList: state.city.getCityList,
+    errorCityList: state.city.errorCityList,
   };
 };
-
 const CityComponent = (props) => {
 
   const columns = [
@@ -77,21 +77,21 @@ const CityComponent = (props) => {
       dataField: "link",
       text: "Action",
       formatter: (rowContent, row) => {
-        return (
+        return ( 
           <div>
-            <Link to={"detail/" + row.id}>
+            <Link to={"detailcity/" + row.city_id}>
               <Button color="dark" className="mr-2">
                 <FontAwesomeIcon icon={faInfo} /> Detail
               </Button>
             </Link>
   
-            <Link to={"edit/" + row.id}>
+            <Link to={"editcity/" + row.city_id}>
               <Button color="dark" className="mr-2">
                 <FontAwesomeIcon icon={faEdit} /> Edit
               </Button>
             </Link>
   
-            <Button color="dark" className="mr-2" onClick={() => handleClick(props.dispatch, row.id)}>
+            <Button color="dark" className="mr-2" onClick={() => handleClick(props.dispatch, row.city_id)}>
               <FontAwesomeIcon icon={faTrash} /> Delete
             </Button>
           </div>
@@ -106,7 +106,7 @@ const CityComponent = (props) => {
       {props.getCityList ? (
         <ToolkitProvider
           bootstrap4
-          keyField="city_id"
+          keyField="id"
           data={props.getCityList}
           columns={columns}
           defaultSorted={defaultSorted}
@@ -116,9 +116,9 @@ const CityComponent = (props) => {
             <div>
               <Row>
                 <Col>
-                  <Link to="/create">
+                  <Link to="/createcity">
                     <Button color="dark" className="mr-2">
-                      <FontAwesomeIcon icon={faUserPlus} /> Create User
+                      <FontAwesomeIcon icon={faUserPlus} /> Create City
                     </Button>
                   </Link>
                 </Col>
