@@ -14,7 +14,7 @@ const VideovrValidation = (values) => {
     }
   
     if (!values.durasi || values.durasi === "") {
-      errors.deskripsi_videovr = "Durasi harus diisi";
+      errors.durasi = "Durasi harus diisi";
     }
   
     return errors
