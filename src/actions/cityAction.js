@@ -103,7 +103,7 @@ export const putCityUpdate = (data, id) => {
         dispatch({
           type: PUT_CITY_EDIT,
           payload: {
-            data: response.data.data,
+            data: response.data.success,
             errorMessage: false,
           },
         });

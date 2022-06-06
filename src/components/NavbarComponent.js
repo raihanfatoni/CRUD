@@ -19,7 +19,7 @@ const NavbarComponent = (props) => {
     <div>
       <Navbar color="light" light expand="md">
         <Container>
-          <NavbarBrand href="/">Home</NavbarBrand>
+          <NavbarBrand href="/">User</NavbarBrand>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
@@ -37,7 +37,7 @@ const NavbarComponent = (props) => {
                 <NavLink href="/destination">Destination</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/marketplace">Market Place</NavLink>
+                <NavLink href="/marketplace">Marketplace</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="/merchandise">Merchandise</NavLink>

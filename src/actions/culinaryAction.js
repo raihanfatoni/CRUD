@@ -1,28 +1,29 @@
 import axios from "axios";
 
-export const GET_USERS_LIST = "GET_USERS_LIST";
-export const GET_USER_DETAIL = "GET_USER_DETAIL";
-export const POST_USER_CREATE = "POST_USER_CREATE";
-export const PUT_USER_EDIT = "PUT_USER_EDIT";
+export const GET_CULINARY_LIST = "GET_CULINARY_LIST";
+export const GET_CULINARY_DETAIL = "GET_CULINARY_DETAIL";
+export const POST_CULINARY_CREATE = "POST_CULINARY_CREATE";
+export const PUT_CULINARY_EDIT = "PUT_CULINARY_EDIT";
 
 
 
-export const getUsersList = () => {
+export const getCulinaryList = () => {
   return (dispatch) => {
     axios
-      .get("https://my-json-server.typicode.com/afifbasya/reactjs-redux/users")
+      .get("https://vitour-backend.herokuapp.com/api/city/culinaries")
       .then(function (response) {
         dispatch({
-          type: GET_USERS_LIST,
+          type: GET_CULINARY_LIST,
           payload: {
-            data: response.data,
+            data: response.data.data,
             errorMessage: false,
           },
         });
+        // console.log(response.data.data)
       })
       .catch(function (error) {
         dispatch({
-          type: GET_USERS_LIST,
+          type: GET_CULINARY_LIST,
           payload: {
             data: false,
             errorMessage: error.message,
@@ -32,25 +33,24 @@ export const getUsersList = () => {
   };
 };
 
-export const getUserDetail = (id) => {
+export const getCulinaryDetail = (id) => {
   return (dispatch) => {
     axios
       .get(
-        "https://my-json-server.typicode.com/afifbasya/reactjs-redux/users/" +
-          id
-      )
+        "https://vitour-backend.herokuapp.com/api/city/culinaries/" +id)
       .then(function (response) {
         dispatch({
-          type: GET_USER_DETAIL,
+          type: GET_CULINARY_DETAIL,
           payload: {
             data: response.data,
             errorMessage: false,
           },
         });
+        console.log(response.data)
       })
       .catch(function (error) {
         dispatch({
-          type: GET_USER_DETAIL,
+          type: GET_CULINARY_DETAIL,
           payload: {
             data: false,
             errorMessage: error.message,
@@ -60,27 +60,27 @@ export const getUserDetail = (id) => {
   };
 };
 
-export const postUserCreate = (data) => {
+export const postCulinaryCreate = (data) => {
   return (dispatch) => {
     axios
       .post(
-         "http://my-json-server.typicode.com/afifbasya/reactjs-redux/users",
+         "https://vitour-backend.herokuapp.com/api/city/culinaries",
         data
       )
       .then(function (response) {
         console.log(response);
         
         dispatch({
-          type: POST_USER_CREATE,
+          type: POST_CULINARY_CREATE,
           payload: {
-            data: response.data,
+            data: response.data.data,
             errorMessage: false,
           },
         });
       })
       .catch(function (error) {
         dispatch({
-          type: POST_USER_CREATE,
+          type: POST_CULINARY_CREATE,
           payload: {
             data: false,
             errorMessage: error.message,
@@ -90,27 +90,27 @@ export const postUserCreate = (data) => {
   };
 };
 
-export const putUserUpdate = (data, id) => {
+export const putCulinaryUpdate = (data, id) => {
   return (dispatch) => {
     axios
       .put(
-         "http://my-json-server.typicode.com/afifbasya/reactjs-redux/users/"+id,
+         "https://vitour-backend.herokuapp.com/api/city/culinaries/"+id,
         data
       )
       .then(function (response) {
         console.log(response);
         
         dispatch({
-          type: PUT_USER_EDIT,
+          type: PUT_CULINARY_EDIT,
           payload: {
-            data: response.data,
+            data: response.data.success,
             errorMessage: false,
           },
         });
       })
       .catch(function (error) {
         dispatch({
-          type: PUT_USER_EDIT,
+          type: PUT_CULINARY_EDIT,
           payload: {
             data: false,
             errorMessage: error.message,
@@ -121,11 +121,11 @@ export const putUserUpdate = (data, id) => {
 };
 
 
-export const deleteUser = (id) => {
+export const deleteCulinary = (id) => {
   return (dispatch) => {
     axios
       .delete(
-         "http://my-json-server.typicode.com/afifbasya/reactjs-redux/users/"+id
+         "https://vitour-backend.herokuapp.com/api/city/culinaries/"+id
       )
       .then(function (response) {
         console.log(response);
@@ -135,27 +135,5 @@ export const deleteUser = (id) => {
         console.log(error);
         
       });
-  };
-};
-
-
-export const deleteDataUser = () => {
-  return (dispatch) => {
-    dispatch({
-      type: GET_USER_DETAIL,
-      payload: {
-        data: false,
-        errorMessage: false,
-      },
-    });
-
-
-    dispatch({
-      type: POST_USER_CREATE,
-      payload: {
-        data: false,
-        errorMessage: false,
-      },
-    });
   };
 };

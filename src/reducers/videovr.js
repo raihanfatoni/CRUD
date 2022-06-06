@@ -1,54 +1,54 @@
 import {
-    GET_USERS_LIST,
-    GET_USER_DETAIL,
-    POST_USER_CREATE,
-    PUT_USER_EDIT,
-  } from "../actions/userAction";
-  
-  let initialState = {
-    getUsersList: false,
-    errorUsersList: false,
-    getUserDetail: false,
-    errorUserDetail: false,
-    getResponDataUser: false,
-    errorResponDataUser: false,
-    title: "Vitour Admin Page",
-  };
-  
-  const users = (state = initialState, action) => {
-    switch (action.type) {
-      case GET_USERS_LIST:
-        return {
-          ...state,
-          getUsersList: action.payload.data,
-          errorUsersList: action.payload.errorMessage,
-        };
-  
-      case GET_USER_DETAIL:
-        return {
-          ...state,
-          getUserDetail: action.payload.data,
-          errorUserDetail: action.payload.errorMessage,
-        };
-  
-      case POST_USER_CREATE:
-        return {
-          ...state,
-          getResponDataUser: action.payload.data,
-          errorResponDataUser: action.payload.errorMessage,
-        };
-  
-      case PUT_USER_EDIT:
-        return {
-          ...state,
-          getResponDataUser: action.payload.data,
-          errorResponDataUser: action.payload.errorMessage,
-        };
-  
-      default:
-        return state;
-    }
-  };
-  
-  export default users;
-  
+  GET_VIDEOVR_LIST,
+  GET_VIDEOVR_DETAIL,
+  POST_VIDEOVR_CREATE,
+  PUT_VIDEOVR_EDIT
+
+} from "../actions/videovrAction";
+
+let initialState = {
+  getVideovrList: false,
+  errorVideovrList: false,
+  getVideovrDetail: false,
+  errorVideovrDetail: false,
+  getResponDataVideovr: false,
+  errorResponDataVideovr: false,
+  title: "Vitour Admin Page",
+};
+
+const videovr = (state = initialState, action) => {
+  switch (action.type) {
+    case GET_VIDEOVR_LIST:
+      return {
+        ...state,
+        getVideovrList: action.payload.data,
+        errorVideovrList: action.payload.errorMessage,
+      };
+
+    case GET_VIDEOVR_DETAIL:
+      return {
+        ...state,
+        getVideovrDetail: action.payload.data,
+        errorVideovrDetail: action.payload.errorMessage,
+      };
+
+    case POST_VIDEOVR_CREATE:
+      return {
+        ...state,
+        getResponDataVideovr: action.payload.data,
+        errorResponDataVideovr: action.payload.errorMessage,
+      };
+
+    case PUT_VIDEOVR_EDIT:
+      return {
+        ...state,
+        getResponDataVideovr: action.payload.data,
+        errorResponDataVideovr: action.payload.errorMessage,
+      };
+
+    default:
+      return state;
+  }
+};
+
+export default videovr;

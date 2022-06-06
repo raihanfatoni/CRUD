@@ -1,54 +1,54 @@
 import {
-    GET_USERS_LIST,
-    GET_USER_DETAIL,
-    POST_USER_CREATE,
-    PUT_USER_EDIT,
-  } from "../actions/userAction";
-  
-  let initialState = {
-    getUsersList: false,
-    errorUsersList: false,
-    getUserDetail: false,
-    errorUserDetail: false,
-    getResponDataUser: false,
-    errorResponDataUser: false,
-    title: "Vitour Admin Page",
-  };
-  
-  const users = (state = initialState, action) => {
-    switch (action.type) {
-      case GET_USERS_LIST:
-        return {
-          ...state,
-          getUsersList: action.payload.data,
-          errorUsersList: action.payload.errorMessage,
-        };
-  
-      case GET_USER_DETAIL:
-        return {
-          ...state,
-          getUserDetail: action.payload.data,
-          errorUserDetail: action.payload.errorMessage,
-        };
-  
-      case POST_USER_CREATE:
-        return {
-          ...state,
-          getResponDataUser: action.payload.data,
-          errorResponDataUser: action.payload.errorMessage,
-        };
-  
-      case PUT_USER_EDIT:
-        return {
-          ...state,
-          getResponDataUser: action.payload.data,
-          errorResponDataUser: action.payload.errorMessage,
-        };
-  
-      default:
-        return state;
-    }
-  };
-  
-  export default users;
-  
+  GET_DESTINATION_LIST,
+  GET_DESTINATION_DETAIL,
+  POST_DESTINATION_CREATE,
+  PUT_DESTINATION_EDIT
+
+} from "../actions/destinationAction";
+
+let initialState = {
+  getDestinationList: false,
+  errorDestinationList: false,
+  getDestinationDetail: false,
+  errorDestinationDetail: false,
+  getResponDataDestination: false,
+  errorResponDataDestination: false,
+  title: "Vitour Admin Page",
+};
+
+const destination = (state = initialState, action) => {
+  switch (action.type) {
+    case GET_DESTINATION_LIST:
+      return {
+        ...state,
+        getDestinationList: action.payload.data,
+        errorDestinationList: action.payload.errorMessage,
+      };
+
+    case GET_DESTINATION_DETAIL:
+      return {
+        ...state,
+        getDestinationDetail: action.payload.data,
+        errorDestinationDetail: action.payload.errorMessage,
+      };
+
+    case POST_DESTINATION_CREATE:
+      return {
+        ...state,
+        getResponDataDestination: action.payload.data,
+        errorResponDataDestination: action.payload.errorMessage,
+      };
+
+    case PUT_DESTINATION_EDIT:
+      return {
+        ...state,
+        getResponDataDestination: action.payload.data,
+        errorResponDataDestination: action.payload.errorMessage,
+      };
+
+    default:
+      return state;
+  }
+};
+
+export default destination;

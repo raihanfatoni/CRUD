@@ -1,54 +1,54 @@
 import {
-    GET_USERS_LIST,
-    GET_USER_DETAIL,
-    POST_USER_CREATE,
-    PUT_USER_EDIT,
-  } from "../actions/userAction";
-  
-  let initialState = {
-    getUsersList: false,
-    errorUsersList: false,
-    getUserDetail: false,
-    errorUserDetail: false,
-    getResponDataUser: false,
-    errorResponDataUser: false,
-    title: "Vitour Admin Page",
-  };
-  
-  const users = (state = initialState, action) => {
-    switch (action.type) {
-      case GET_USERS_LIST:
-        return {
-          ...state,
-          getUsersList: action.payload.data,
-          errorUsersList: action.payload.errorMessage,
-        };
-  
-      case GET_USER_DETAIL:
-        return {
-          ...state,
-          getUserDetail: action.payload.data,
-          errorUserDetail: action.payload.errorMessage,
-        };
-  
-      case POST_USER_CREATE:
-        return {
-          ...state,
-          getResponDataUser: action.payload.data,
-          errorResponDataUser: action.payload.errorMessage,
-        };
-  
-      case PUT_USER_EDIT:
-        return {
-          ...state,
-          getResponDataUser: action.payload.data,
-          errorResponDataUser: action.payload.errorMessage,
-        };
-  
-      default:
-        return state;
-    }
-  };
-  
-  export default users;
-  
+  GET_CULINARY_LIST,
+  GET_CULINARY_DETAIL,
+  POST_CULINARY_CREATE,
+  PUT_CULINARY_EDIT
+
+} from "../actions/culinaryAction";
+
+let initialState = {
+  getCulinaryList: false,
+  errorCulinaryList: false,
+  getCulinaryDetail: false,
+  errorCulinaryDetail: false,
+  getResponDataCulinary: false,
+  errorResponDataCulinary: false,
+  title: "Vitour Admin Page",
+};
+
+const culinary = (state = initialState, action) => {
+  switch (action.type) {
+    case GET_CULINARY_LIST:
+      return {
+        ...state,
+        getCulinaryList: action.payload.data,
+        errorCulinaryList: action.payload.errorMessage,
+      };
+
+    case GET_CULINARY_DETAIL:
+      return {
+        ...state,
+        getCulinaryDetail: action.payload.data,
+        errorCulinaryDetail: action.payload.errorMessage,
+      };
+
+    case POST_CULINARY_CREATE:
+      return {
+        ...state,
+        getResponDataCulinary: action.payload.data,
+        errorResponDataCulinary: action.payload.errorMessage,
+      };
+
+    case PUT_CULINARY_EDIT:
+      return {
+        ...state,
+        getResponDataCulinary: action.payload.data,
+        errorResponDataCulinary: action.payload.errorMessage,
+      };
+
+    default:
+      return state;
+  }
+};
+
+export default culinary;

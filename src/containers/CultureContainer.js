@@ -1,22 +1,20 @@
 import React, { Component } from "react";
-import TableComponent from "../components/TableComponent";
+import CultureComponent from "../components/CultureComponent";
 import { connect } from "react-redux";
-import { getUsersList, deleteDataUser } from '../actions/userAction'
+import { getCultureList } from '../actions/cultureAction'
 
-class HomeContainer extends Component {
+class CultureContainer extends Component {
   componentDidMount() {
-    this.props.dispatch(getUsersList());
-    this.props.dispatch(deleteDataUser());
+    this.props.dispatch(getCultureList());
   }
 
   render() {
-    
     return (
       <div>
-        <TableComponent />
+        <CultureComponent />
       </div>
     );
   }
 }
 
-export default connect()(HomeContainer);
+export default connect()(CultureContainer);

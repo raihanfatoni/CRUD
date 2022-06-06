@@ -1,22 +1,20 @@
 import React, { Component } from "react";
-import TableComponent from "../components/TableComponent";
+import MarketplaceComponent from "../components/MarketplaceComponent";
 import { connect } from "react-redux";
-import { getUsersList, deleteDataUser } from '../actions/userAction'
+import { getMarketplaceList } from '../actions/marketplaceAction'
 
-class HomeContainer extends Component {
+class MarketplaceContainer extends Component {
   componentDidMount() {
-    this.props.dispatch(getUsersList());
-    this.props.dispatch(deleteDataUser());
+    this.props.dispatch(getMarketplaceList());
   }
 
   render() {
-    
     return (
       <div>
-        <TableComponent />
+        <MarketplaceComponent />
       </div>
     );
   }
 }
 
-export default connect()(HomeContainer);
+export default connect()(MarketplaceContainer);

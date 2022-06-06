@@ -1,54 +1,54 @@
 import {
-    GET_USERS_LIST,
-    GET_USER_DETAIL,
-    POST_USER_CREATE,
-    PUT_USER_EDIT,
-  } from "../actions/userAction";
-  
-  let initialState = {
-    getUsersList: false,
-    errorUsersList: false,
-    getUserDetail: false,
-    errorUserDetail: false,
-    getResponDataUser: false,
-    errorResponDataUser: false,
-    title: "Vitour Admin Page",
-  };
-  
-  const users = (state = initialState, action) => {
-    switch (action.type) {
-      case GET_USERS_LIST:
-        return {
-          ...state,
-          getUsersList: action.payload.data,
-          errorUsersList: action.payload.errorMessage,
-        };
-  
-      case GET_USER_DETAIL:
-        return {
-          ...state,
-          getUserDetail: action.payload.data,
-          errorUserDetail: action.payload.errorMessage,
-        };
-  
-      case POST_USER_CREATE:
-        return {
-          ...state,
-          getResponDataUser: action.payload.data,
-          errorResponDataUser: action.payload.errorMessage,
-        };
-  
-      case PUT_USER_EDIT:
-        return {
-          ...state,
-          getResponDataUser: action.payload.data,
-          errorResponDataUser: action.payload.errorMessage,
-        };
-  
-      default:
-        return state;
-    }
-  };
-  
-  export default users;
-  
+  GET_MARKETPLACE_LIST,
+  GET_MARKETPLACE_DETAIL,
+  POST_MARKETPLACE_CREATE,
+  PUT_MARKETPLACE_EDIT
+
+} from "../actions/marketplaceAction";
+
+let initialState = {
+  getMarketplaceList: false,
+  errorMarketplaceList: false,
+  getMarketplaceDetail: false,
+  errorMarketplaceDetail: false,
+  getResponDataMarketplace: false,
+  errorResponDataMarketplace: false,
+  title: "Vitour Admin Page",
+};
+
+const marketplace = (state = initialState, action) => {
+  switch (action.type) {
+    case GET_MARKETPLACE_LIST:
+      return {
+        ...state,
+        getMarketplaceList: action.payload.data,
+        errorMarketplaceList: action.payload.errorMessage,
+      };
+
+    case GET_MARKETPLACE_DETAIL:
+      return {
+        ...state,
+        getMarketplaceDetail: action.payload.data,
+        errorMarketplaceDetail: action.payload.errorMessage,
+      };
+
+    case POST_MARKETPLACE_CREATE:
+      return {
+        ...state,
+        getResponDataMarketplace: action.payload.data,
+        errorResponDataMarketplace: action.payload.errorMessage,
+      };
+
+    case PUT_MARKETPLACE_EDIT:
+      return {
+        ...state,
+        getResponDataMarketplace: action.payload.data,
+        errorResponDataMarketplace: action.payload.errorMessage,
+      };
+
+    default:
+      return state;
+  }
+};
+
+export default marketplace;

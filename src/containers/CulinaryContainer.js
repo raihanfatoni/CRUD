@@ -1,22 +1,20 @@
 import React, { Component } from "react";
-import TableComponent from "../components/TableComponent";
+import CulinaryComponent from "../components/CulinaryComponent";
 import { connect } from "react-redux";
-import { getUsersList, deleteDataUser } from '../actions/userAction'
+import { getCulinaryList } from '../actions/culinaryAction'
 
-class HomeContainer extends Component {
+class CulinaryContainer extends Component {
   componentDidMount() {
-    this.props.dispatch(getUsersList());
-    this.props.dispatch(deleteDataUser());
+    this.props.dispatch(getCulinaryList());
   }
 
   render() {
-    
     return (
       <div>
-        <TableComponent />
+        <CulinaryComponent />
       </div>
     );
   }
 }
 
-export default connect()(HomeContainer);
+export default connect()(CulinaryContainer);

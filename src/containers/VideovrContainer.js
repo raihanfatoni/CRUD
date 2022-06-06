@@ -1,22 +1,20 @@
 import React, { Component } from "react";
-import TableComponent from "../components/TableComponent";
+import VideovrComponent from "../components/VideovrComponent";
 import { connect } from "react-redux";
-import { getUsersList, deleteDataUser } from '../actions/userAction'
+import { getVideovrList } from '../actions/videovrAction'
 
-class HomeContainer extends Component {
+class VideovrContainer extends Component {
   componentDidMount() {
-    this.props.dispatch(getUsersList());
-    this.props.dispatch(deleteDataUser());
+    this.props.dispatch(getVideovrList());
   }
 
   render() {
-    
     return (
       <div>
-        <TableComponent />
+        <VideovrComponent />
       </div>
     );
   }
 }
 
-export default connect()(HomeContainer);
+export default connect()(VideovrContainer);

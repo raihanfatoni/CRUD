@@ -34,10 +34,8 @@ class EditCityContainer extends Component {
       }else {
         swal(
             "City Updated!",
-            "Nama Kota : " +
-              this.props.getResponDataCity.nama_kota +
-              " , Koordinat Kota : " +
-              this.props.getResponDataCity.koordinat_kota,
+            "Success : " +
+              this.props.getResponDataCity,
             "success"
           );
       }

@@ -1,54 +1,54 @@
 import {
-    GET_USERS_LIST,
-    GET_USER_DETAIL,
-    POST_USER_CREATE,
-    PUT_USER_EDIT,
-  } from "../actions/userAction";
-  
-  let initialState = {
-    getUsersList: false,
-    errorUsersList: false,
-    getUserDetail: false,
-    errorUserDetail: false,
-    getResponDataUser: false,
-    errorResponDataUser: false,
-    title: "Vitour Admin Page",
-  };
-  
-  const users = (state = initialState, action) => {
-    switch (action.type) {
-      case GET_USERS_LIST:
-        return {
-          ...state,
-          getUsersList: action.payload.data,
-          errorUsersList: action.payload.errorMessage,
-        };
-  
-      case GET_USER_DETAIL:
-        return {
-          ...state,
-          getUserDetail: action.payload.data,
-          errorUserDetail: action.payload.errorMessage,
-        };
-  
-      case POST_USER_CREATE:
-        return {
-          ...state,
-          getResponDataUser: action.payload.data,
-          errorResponDataUser: action.payload.errorMessage,
-        };
-  
-      case PUT_USER_EDIT:
-        return {
-          ...state,
-          getResponDataUser: action.payload.data,
-          errorResponDataUser: action.payload.errorMessage,
-        };
-  
-      default:
-        return state;
-    }
-  };
-  
-  export default users;
-  
+  GET_CULTURE_LIST,
+  GET_CULTURE_DETAIL,
+  POST_CULTURE_CREATE,
+  PUT_CULTURE_EDIT
+
+} from "../actions/cultureAction";
+
+let initialState = {
+  getCultureList: false,
+  errorCultureList: false,
+  getCultureDetail: false,
+  errorCultureDetail: false,
+  getResponDataCulture: false,
+  errorResponDataCulture: false,
+  title: "Vitour Admin Page",
+};
+
+const culture = (state = initialState, action) => {
+  switch (action.type) {
+    case GET_CULTURE_LIST:
+      return {
+        ...state,
+        getCultureList: action.payload.data,
+        errorCultureList: action.payload.errorMessage,
+      };
+
+    case GET_CULTURE_DETAIL:
+      return {
+        ...state,
+        getCultureDetail: action.payload.data,
+        errorCultureDetail: action.payload.errorMessage,
+      };
+
+    case POST_CULTURE_CREATE:
+      return {
+        ...state,
+        getResponDataCulture: action.payload.data,
+        errorResponDataCulture: action.payload.errorMessage,
+      };
+
+    case PUT_CULTURE_EDIT:
+      return {
+        ...state,
+        getResponDataCulture: action.payload.data,
+        errorResponDataCulture: action.payload.errorMessage,
+      };
+
+    default:
+      return state;
+  }
+};
+
+export default culture;
