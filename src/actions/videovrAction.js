@@ -43,7 +43,7 @@ export const getVideovrDetail = (id) => {
             errorMessage: false,
           },
         });
-        console.log(response)
+        console.log(response.data)
       })
       .catch(function (error) {
         dispatch({

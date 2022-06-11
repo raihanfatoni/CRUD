@@ -42,6 +42,7 @@ const mapStateToProps = (state) => {
       shopee : state.marketplace.getMarketplaceDetail.shopee,
       tokopedia : state.marketplace.getMarketplaceDetail.tokopedia,
       bukalapak : state.marketplace.getMarketplaceDetail.bukalapak,
+      merchandise_id : state.marketplace.getMarketplaceDetail.merchandise_id,
     }
   };
 };
@@ -106,6 +107,18 @@ class MarketplaceFormComponent extends Component {
               />
             </FormGroup>
           </Col>
+
+          <Col md={6}>
+            <FormGroup>
+              <Field
+                type="text"
+                name="merchandise_id"
+                component={renderField}
+                label="Merchandise ID :"
+              />
+            </FormGroup>
+          </Col>
+
         </FormGroup>
 
         <FormGroup row>

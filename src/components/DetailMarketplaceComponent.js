@@ -16,7 +16,7 @@ const DetailMarketplaceComponent = (props) => {
         <tr>
           <td width="200">ID</td>
           <td width="10">:</td>
-          <td>{props.getMarketplaceDetail.id_alamat_marketplace}</td>
+          <td>{props.getMarketplaceDetail.marketplace_id}</td>
         </tr>
         <tr>
           <td width="200">Whatsapp</td>
@@ -42,6 +42,11 @@ const DetailMarketplaceComponent = (props) => {
           <td width="200">Bukalapak</td>
           <td width="10">:</td>
           <td>{props.getMarketplaceDetail.bukalapak}</td>
+        </tr>
+        <tr>
+          <td width="200">Merchandise ID</td>
+          <td width="10">:</td>
+          <td>{props.getMarketplaceDetail.merchandise_id}</td>
         </tr>
 
       </tbody>

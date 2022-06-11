@@ -56,7 +56,7 @@ const MarketplaceComponent = (props) => {
 
   const columns = [
     {
-      dataField: "id_alamat_marketplace",
+      dataField: "marketplace_id",
       text: "ID",
       sort: true,
       headerStyle: () => {
@@ -79,19 +79,19 @@ const MarketplaceComponent = (props) => {
       formatter: (rowContent, row) => {
         return ( 
           <div>
-            <Link to={"detailmarketplace/" + row.id_alamat_marketplace}>
+            <Link to={"detailmarketplace/" + row.marketplace_id}>
               <Button color="dark" className="mr-2">
                 <FontAwesomeIcon icon={faInfo} /> Detail
               </Button>
             </Link>
   
-            <Link to={"editmarketplace/" + row.id_alamat_marketplace}>
+            <Link to={"editmarketplace/" + row.marketplace_id}>
               <Button color="dark" className="mr-2">
                 <FontAwesomeIcon icon={faEdit} /> Edit
               </Button>
             </Link>
   
-            <Button color="dark" className="mr-2" onClick={() => handleClick(props.dispatch, row.id_alamat_marketplace)}>
+            <Button color="dark" className="mr-2" onClick={() => handleClick(props.dispatch, row.marketplace_id)}>
               <FontAwesomeIcon icon={faTrash} /> Delete
             </Button>
           </div>

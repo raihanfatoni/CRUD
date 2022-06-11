@@ -42,11 +42,11 @@ export const getCulinaryDetail = (id) => {
         dispatch({
           type: GET_CULINARY_DETAIL,
           payload: {
-            data: response.data,
+            data: response.data.data[0],
             errorMessage: false,
           },
         });
-        console.log(response.data)
+        console.log(response.data.data[0])
       })
       .catch(function (error) {
         dispatch({

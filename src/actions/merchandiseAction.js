@@ -39,11 +39,11 @@ export const getMerchandiseDetail = (id) => {
         dispatch({
           type: GET_MERCHANDISE_DETAIL,
           payload: {
-            data: response.data,
+            data: response.data.data[0],
             errorMessage: false,
           },
         });
-        console.log(response)
+        console.log(response.data.data[0])
       })
       .catch(function (error) {
         dispatch({

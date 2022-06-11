@@ -42,7 +42,7 @@ const mapStateToProps = (state) => {
       merchandise_type : state.merchandise.getMerchandiseDetail.merchandise_type,
       deskripsi_merchandise : state.merchandise.getMerchandiseDetail.deskripsi_merchandise,
       alamat_toko : state.merchandise.getMerchandiseDetail.alamat_toko,
-      id_alamat_marketplace : state.merchandise.getMerchandiseDetail.id_alamat_marketplace,
+      koordinat_toko : state.merchandise.getMerchandiseDetail.koordinat_toko,
     }
   };
 };
@@ -112,9 +112,9 @@ class MerchandiseFormComponent extends Component {
             <FormGroup>
               <Field
                 type="text"
-                name="id_alamat_marketplace"
+                name="koordinat_toko"
                 component={renderField}
-                label="id_alamat_marketplace :"
+                label="Koordinat Toko :"
               />
             </FormGroup>
           </Col>

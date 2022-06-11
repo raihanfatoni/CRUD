@@ -30,10 +30,10 @@ class CreateMarketplaceContainer extends Component {
       }else {
         swal(
             "Marketplace Created!",
-            "WA : " +
-              this.props.getResponDataMarketplace.whatsapp +
-              " , Tokopedia : " +
-              this.props.getResponDataMarketplace.tokopedia,
+            "ID : " +
+              this.props.getResponDataMarketplace.marketplace_id +
+              " , Whatsapp : " +
+              this.props.getResponDataMarketplace.whatsapp,
             "success"
           );
       }

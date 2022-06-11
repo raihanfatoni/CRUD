@@ -24,24 +24,24 @@ const DetailMerchandiseComponent = (props) => {
           <td>{props.getMerchandiseDetail.nama_merchandise}</td>
         </tr>
         <tr>
-          <td width="200">Deskripsi</td>
+          <td width="200">Tipe Merchandise</td>
           <td width="10">:</td>
-          <td>{props.getMerchandiseDetail.deskripsi_destinasi}</td>
+          <td>{props.getMerchandiseDetail.merchandise_type}</td>
         </tr>
         <tr>
-          <td width="200">alamat_toko</td>
+          <td width="200">Deskripsi</td>
+          <td width="10">:</td>
+          <td>{props.getMerchandiseDetail.deskripsi_merchandise}</td>
+        </tr>
+        <tr>
+          <td width="200">Alamat Toko</td>
           <td width="10">:</td>
           <td>{props.getMerchandiseDetail.alamat_toko}</td>
         </tr>
         <tr>
-          <td width="200">Marketplace</td>
+          <td width="200">Koordinat Toko </td>
           <td width="10">:</td>
-          <td>{props.getMerchandiseDetail.id_alamat_marketplace}</td>
-        </tr>
-        <tr>
-          <td width="200">Tipe Merchandise </td>
-          <td width="10">:</td>
-          <td>{props.getMerchandiseDetail.merchandise_type}</td>
+          <td>{props.getMerchandiseDetail.koordinat_toko}</td>
         </tr>
 
       </tbody>

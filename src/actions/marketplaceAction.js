@@ -39,11 +39,11 @@ export const getMarketplaceDetail = (id) => {
         dispatch({
           type: GET_MARKETPLACE_DETAIL,
           payload: {
-            data: response.data,
+            data: response.data.data,
             errorMessage: false,
           },
         });
-        console.log(response)
+        console.log(response.data.data)
       })
       .catch(function (error) {
         dispatch({
@@ -91,7 +91,7 @@ export const putMarketplaceUpdate = (data, id) => {
   return (dispatch) => {
     axios
       .put(
-         "https://vitour-backend.herokuapp.com/api/city/merchandise/marketplace"+id,
+         "https://vitour-backend.herokuapp.com/api/city/merchandise/marketplace/"+id,
         data
       )
       .then(function (response) {

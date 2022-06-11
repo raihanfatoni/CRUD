@@ -20,6 +20,10 @@ const MarketplaceValidation = (values) => {
     if (!values.bukalapak || values.bukalapak === "") {
         errors.bukalapak = "Bukalapak harus diisi";
     }
+
+    if (!values.merchandise_id || values.merchandise_id === "") {
+      errors.merchandise_id = "Merch ID harus diisi";
+  }
   
     return errors
   };
