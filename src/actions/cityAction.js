@@ -42,11 +42,11 @@ export const getCityDetail = (id) => {
         dispatch({
           type: GET_CITY_DETAIL,
           payload: {
-            data: response.data.data[0],
+            data: response.data.data,
             errorMessage: false,
           },
         });
-        console.log(response.data.data[0])
+        console.log(response.data)
       })
       .catch(function (error) {
         dispatch({
