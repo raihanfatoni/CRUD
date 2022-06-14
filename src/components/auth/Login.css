@@ -1,0 +1,98 @@
+.bodyLogin{
+    background:linear-gradient(to left, rgb(255, 255, 255), rgb(255, 255, 255));
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    color:white;
+  }
+  
+  .containerLogin{
+    display:flex;
+      align-items:center;
+      justify-content:center;
+      height:100vh;
+      width:100%;
+  }
+    .form-box{
+        width:380px;
+        height:450px;
+        background-color:black;
+        padding:20px;
+        display:flex;
+        flex-direction:column;
+        justify-content:flex-start;
+        opacity:0.5;
+        border-radius:2%;
+    }
+  .header-form{
+    margin-bottom:15px;
+  }
+  .btn {
+    margin-top:25px;
+    margin-bottom:10px;
+  }
+  .message{
+    display:flex;
+    justify-content:space-between
+  }
+  .social{
+    display:flex;
+    justify-content:space-around;
+    padding:30px;
+  }
+  
+  .social i{
+    font-size:35px;
+  }
+  
+  .social i:hover{
+    color:red;
+    cursor:pointer;
+  }
+
+  .home-btn {
+    width: 100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  /* .go-to-home-btn {
+    background-color: green;
+    font-size: medium;
+  } */
+
+  .go-to-home-btn:link, .go-to-home-btn:visited {
+    
+    background-color: rgb(108, 117, 125);
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  .go-to-home-btn:hover, .go-to-home-btn:active {
+    background-color: rgb(73, 79, 85);;
+  }
+
+  .signup-btn {
+    margin-top: 5px;
+    border-radius: 4px;
+  }
+
+  .signup-btn:link, .signup-btn:visited {
+    background-color: rgb(108, 117, 125);
+    color: white;
+    padding: 5px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  .signup-btn:hover, .signup-btn:active {
+    background-color: rgb(73, 79, 85);
+  }
+
+
+  

@@ -53,6 +53,7 @@ import EditVideovrContainer from "./containers/EditVideovrContainer";
 
 // Login
 import LoginContainer from "./containers/auth/LoginContainer";
+// import { isLogin } from "./components/auth/LoginComponent";
 
 
 export default class App extends Component {
@@ -68,6 +69,7 @@ export default class App extends Component {
             <div>
               <NavbarComponent />
               <JumbotronComponent />
+              {/* {console.log(isLogin)} */}
               <Route path="/user" exact component={HomeContainer} />
               <Route path="/create" exact component={CreateUserContainer} />
               <Route path="/detail/:id" exact component={DetailUserContainer} />
