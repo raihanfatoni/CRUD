@@ -94,6 +94,7 @@ import React, { useRef, useState, useEffect, useContext } from 'react';
 
 import axios from 'axios';
 import { connect } from "react-redux";
+import { useHistory } from "react-router-dom";
 const LOGIN_URL = 'https://vitour-backend.herokuapp.com/api/login';
 
 // const mapStateToProps = (state) => {
@@ -110,6 +111,7 @@ const Login = () => {
     // const { setAuth } = useContext(AuthContext);
     const emailRef = useRef();
     const errRef = useRef();
+    let history = useHistory();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -139,6 +141,7 @@ const Login = () => {
             // console.log(JSON.stringify(response));
             const token = response?.data?.data.token;
             // const roles = response?.data?.roles;
+            sessionStorage.setItem('token', token);
             console.log(token);
             console.log(email);
             // console.log(password);
@@ -146,6 +149,8 @@ const Login = () => {
             setEmail('');
             setPassword('');
             setSuccess(true);
+            history.push("/");
+            
         } catch (err) {
             if (!err?.response) {
                 setErrMsg('No Server Response');
@@ -162,22 +167,7 @@ const Login = () => {
 
     return (
         <>
-            {success ? (
-                <div className="containerLogin">
-                  <div className="form-box">
-                    <div>
-                      <div>
-                        <h1 className="home-btn">You are logged in!</h1>
-                      </div>
-                      <div>
-                          <a href="/user" className="home-btn go-to-home-btn">Go to Home</a>
-                      </div>
-                    </div>
-                    {/* {isLogin = true}
-                    {console.log(isLogin)} */}
-                  </div>
-                </div>
-            ) : (
+           
                 <div className="containerLogin">
                   <div className="form-box">
                     <div className="body-form">
@@ -220,7 +210,7 @@ const Login = () => {
                     
                 </div>
                 
-            )}
+            
         </>
     )
 }
