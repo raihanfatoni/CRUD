@@ -62,7 +62,11 @@ export const postVideovrCreate = (data) => {
     axios
       .post(
          "https://vitour-backend.herokuapp.com/api/city/videovrs",
-        data
+        data, {
+          headers: {
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+          }
+        }
       )
       .then(function (response) {
         console.log(response);
@@ -92,7 +96,11 @@ export const putVideovrUpdate = (data, id) => {
     axios
       .put(
          "https://vitour-backend.herokuapp.com/api/city/videovrs/"+id,
-        data
+        data, {
+          headers: {
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+          }
+        }
       )
       .then(function (response) {
         console.log(response);
@@ -122,7 +130,11 @@ export const deleteVideovr = (id) => {
   return (dispatch) => {
     axios
       .delete(
-         "https://vitour-backend.herokuapp.com/api/city/videovrs/"+id
+         "https://vitour-backend.herokuapp.com/api/city/videovrs/"+id, {
+          headers: {
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+          }
+        }
       )
       .then(function (response) {
         console.log(response);

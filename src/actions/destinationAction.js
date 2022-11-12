@@ -62,7 +62,11 @@ export const postDestinationCreate = (data) => {
     axios
       .post(
          "https://vitour-backend.herokuapp.com/api/city/destinations",
-        data
+        data, {
+          headers: {
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+          }
+        }
       )
       .then(function (response) {
         console.log(response);
@@ -92,7 +96,11 @@ export const putDestinationUpdate = (data, id) => {
     axios
       .put(
          "https://vitour-backend.herokuapp.com/api/city/destinations/"+id,
-        data
+        data, {
+          headers: {
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+          }
+        }
       )
       .then(function (response) {
         console.log(response);
@@ -122,7 +130,11 @@ export const deleteDestination = (id) => {
   return (dispatch) => {
     axios
       .delete(
-         "https://vitour-backend.herokuapp.com/api/city/destinations/"+id
+         "https://vitour-backend.herokuapp.com/api/city/destinations/"+id, {
+          headers: {
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+          }
+        }
       )
       .then(function (response) {
         console.log(response);

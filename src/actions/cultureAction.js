@@ -62,7 +62,11 @@ export const postCultureCreate = (data) => {
     axios
       .post(
          "https://vitour-backend.herokuapp.com/api/city/cultures",
-        data
+        data, {
+          headers: {
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+          }
+        }
       )
       .then(function (response) {
         console.log(response);
@@ -92,7 +96,11 @@ export const putCultureUpdate = (data, id) => {
     axios
       .put(
          "https://vitour-backend.herokuapp.com/api/city/cultures/"+id,
-        data
+        data, {
+          headers: {
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+          }
+        }
       )
       .then(function (response) {
         console.log(response);
@@ -122,7 +130,11 @@ export const deleteCulture = (id) => {
   return (dispatch) => {
     axios
       .delete(
-         "https://vitour-backend.herokuapp.com/api/city/cultures/"+id
+         "https://vitour-backend.herokuapp.com/api/city/cultures/"+id, {
+          headers: {
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+          }
+        }
       )
       .then(function (response) {
         console.log(response);

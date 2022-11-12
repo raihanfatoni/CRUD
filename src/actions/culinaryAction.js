@@ -65,7 +65,11 @@ export const postCulinaryCreate = (data) => {
     axios
       .post(
          "https://vitour-backend.herokuapp.com/api/city/culinaries",
-        data
+        data, {
+          headers: {
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+          }
+        }
       )
       .then(function (response) {
         console.log(response);
@@ -95,7 +99,11 @@ export const putCulinaryUpdate = (data, id) => {
     axios
       .put(
          "https://vitour-backend.herokuapp.com/api/city/culinaries/"+id,
-        data
+        data, {
+          headers: {
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+          }
+        }
       )
       .then(function (response) {
         console.log(response);
@@ -125,7 +133,11 @@ export const deleteCulinary = (id) => {
   return (dispatch) => {
     axios
       .delete(
-         "https://vitour-backend.herokuapp.com/api/city/culinaries/"+id
+         "https://vitour-backend.herokuapp.com/api/city/culinaries/"+id, {
+          headers: {
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+          }
+        }
       )
       .then(function (response) {
         console.log(response);
