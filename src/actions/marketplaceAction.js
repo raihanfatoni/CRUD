@@ -62,7 +62,11 @@ export const postMarketplaceCreate = (data) => {
     axios
       .post(
          "https://vitour-backend.herokuapp.com/api/city/merchandise/marketplace",
-        data
+        data, {
+          headers: {
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+          }
+        }
       )
       .then(function (response) {
         console.log(response);
@@ -92,7 +96,11 @@ export const putMarketplaceUpdate = (data, id) => {
     axios
       .put(
          "https://vitour-backend.herokuapp.com/api/city/merchandise/marketplace/"+id,
-        data
+        data, {
+          headers: {
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+          }
+        }
       )
       .then(function (response) {
         console.log(response);
@@ -122,7 +130,11 @@ export const deleteMarketplace = (id) => {
   return (dispatch) => {
     axios
       .delete(
-         "https://vitour-backend.herokuapp.com/api/city/merchandise/marketplace/"+id
+         "https://vitour-backend.herokuapp.com/api/city/merchandise/marketplace/"+id, {
+          headers: {
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+          }
+        }
       )
       .then(function (response) {
         console.log(response);

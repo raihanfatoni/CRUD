@@ -65,7 +65,11 @@ export const postCityCreate = (data) => {
     axios
       .post(
          "https://vitour-backend.herokuapp.com/api/cities",
-        data
+        data, {
+          headers: {
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+          }
+        }
       )
       .then(function (response) {
         console.log(response);
@@ -95,7 +99,11 @@ export const putCityUpdate = (data, id) => {
     axios
       .put(
          "https://vitour-backend.herokuapp.com/api/cities/"+id,
-        data
+        data, {
+          headers: {
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+          }
+        }
       )
       .then(function (response) {
         console.log(response);
@@ -125,7 +133,11 @@ export const deleteCity = (id) => {
   return (dispatch) => {
     axios
       .delete(
-         "https://vitour-backend.herokuapp.com/api/cities/"+id
+         "https://vitour-backend.herokuapp.com/api/cities/"+id, {
+          headers: {
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+          }
+        }
       )
       .then(function (response) {
         console.log(response);

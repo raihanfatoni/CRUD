@@ -61,8 +61,12 @@ export const postMerchandiseCreate = (data) => {
   return (dispatch) => {
     axios
       .post(
-         "https://vitour-backend.herokuapp.com/api/city/merchandises/",
-        data
+         "https://vitour-backend.herokuapp.com/api/city/merchandises/", 
+        data, {
+          headers: {
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+          }
+        }
       )
       .then(function (response) {
         console.log(response);
@@ -92,7 +96,11 @@ export const putMerchandiseUpdate = (data, id) => {
     axios
       .put(
          "https://vitour-backend.herokuapp.com/api/city/merchandises/"+id,
-        data
+        data, {
+          headers: {
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+          }
+        }
       )
       .then(function (response) {
         console.log(response);
@@ -122,7 +130,11 @@ export const deleteMerchandise = (id) => {
   return (dispatch) => {
     axios
       .delete(
-         "https://vitour-backend.herokuapp.com/api/city/merchandises/"+id
+         "https://vitour-backend.herokuapp.com/api/city/merchandises/"+id, {
+          headers: {
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+          }
+        }
       )
       .then(function (response) {
         console.log(response);
