@@ -51,6 +51,11 @@ import DetailVideovrContainer from "./containers/DetailVideovrContainer";
 import CreateVideovrContainer from "./containers/CreateVideovrContainer";
 import EditVideovrContainer from "./containers/EditVideovrContainer";
 
+// Orders CRUD
+import OrdersContainer from "./containers/OrdersContainer";
+import DetailOrdersContainer from "./containers/DetailOrdersContainer";
+import EditOrdersContainer from "./containers/EditOrdersContainer";
+
 // Login
 import LoginContainer from "./containers/auth/LoginContainer";
 // import { isLogin } from "./components/auth/LoginComponent";
@@ -109,6 +114,11 @@ export default class App extends Component {
               <Route path="/detailvideovr/:id" exact component={DetailVideovrContainer} />
               <Route path="/createvideovr" exact component={CreateVideovrContainer} />
               <Route path="/editvideovr/:id" exact component={EditVideovrContainer} />
+
+              
+              <Route path="/orders" exact component={OrdersContainer} />
+              <Route path="/detailorders/:id" exact component={DetailOrdersContainer} />
+              <Route path="/editorders/:id" exact component={EditOrdersContainer} />
             </div>
           </Switch>
             

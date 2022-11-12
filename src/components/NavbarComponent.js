@@ -45,6 +45,9 @@ const NavbarComponent = (props) => {
               <NavItem>
                 <NavLink href="/videovr">Video VR</NavLink>
               </NavItem>
+              <NavItem>
+                <NavLink href="/orders">Orders</NavLink>
+              </NavItem>
             </Nav>
           </Collapse>
         </Container>

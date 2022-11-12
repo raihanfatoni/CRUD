@@ -7,6 +7,7 @@ import destination from './destination'
 import marketplace from './marketplace'
 import merchandise from './merchandise'
 import videovr from './videovr'
+import orders from './orders'
 import { reducer as formReducer } from 'redux-form'
 
 export default combineReducers({
@@ -18,5 +19,6 @@ export default combineReducers({
     marketplace,
     merchandise,
     videovr,
+    orders,
     form: formReducer
 })
