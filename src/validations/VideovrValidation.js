@@ -1,8 +1,8 @@
 const VideovrValidation = (values) => {
     const errors = {};
   
-    if (!values.city_id || values.city_id === "") {
-      errors.city_id = "ID Kota harus diisi";
+    if (!values.destination_id || values.destination_id === "") {
+      errors.destination_id = "ID Kota harus diisi";
     }
   
     if (!values.link_video || values.link_video === "") {

@@ -66,62 +66,13 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        
-        
         <BrowserRouter>
           <Switch>
           <Route path="/login" exact component={LoginContainer} />
-          
             <div>
               <NavbarComponent />
               <JumbotronComponent />
               {/* {console.log(isLogin)} */}
-<<<<<<< HEAD
-              <Route path="/user" exact component={HomeContainer} />
-              <Route path="/create" exact component={CreateUserContainer} />
-              <Route path="/detail/:id" exact component={DetailUserContainer} />
-              <Route path="/edit/:id" exact component={EditUserContainer} />
-
-              <Route path="/city" exact component={CityContainer} />
-              <Route path="/detailcity/:id" exact component={DetailCityContainer} />
-              <Route path="/createcity" exact component={CreateCityContainer} />
-              <Route path="/editcity/:id" exact component={EditCityContainer} />
-
-              <Route path="/culinary" exact component={CulinaryContainer} />
-              <Route path="/detailculinary/:id" exact component={DetailCulinaryContainer} />
-              <Route path="/createculinary" exact component={CreateCulinaryContainer} />
-              <Route path="/editculinary/:id" exact component={EditCulinaryContainer} />
-
-              <Route path="/culture" exact component={CultureContainer} />
-              <Route path="/detailculture/:id" exact component={DetailCultureContainer} />
-              <Route path="/createculture" exact component={CreateCultureContainer} />
-              <Route path="/editculture/:id" exact component={EditCultureContainer} />
-
-              <Route path="/destination" exact component={DestinationContainer} />
-              <Route path="/detaildestination/:id" exact component={DetailDestinationContainer} />
-              <Route path="/createdestination" exact component={CreateDestinationContainer} />
-              <Route path="/editdestination/:id" exact component={EditDestinationContainer} />
-
-              <Route path="/marketplace" exact component={MarketplaceContainer} />
-              <Route path="/detailmarketplace/:id" exact component={DetailMarketplaceContainer} />
-              <Route path="/createmarketplace" exact component={CreateMarketplaceContainer} />
-              <Route path="/editmarketplace/:id" exact component={EditMarketplaceContainer} />
-
-              <Route path="/merchandise" exact component={MerchandiseContainer} />
-              <Route path="/detailmerchandise/:id" exact component={DetailMerchandiseContainer} />
-              <Route path="/createmerchandise" exact component={CreateMerchandiseContainer} />
-              <Route path="/editmerchandise/:id" exact component={EditMerchandiseContainer} />
-
-              <Route path="/videovr" exact component={VideovrContainer} />
-              <Route path="/detailvideovr/:id" exact component={DetailVideovrContainer} />
-              <Route path="/createvideovr" exact component={CreateVideovrContainer} />
-              <Route path="/editvideovr/:id" exact component={EditVideovrContainer} />
-
-              
-              <Route path="/orders" exact component={OrdersContainer} />
-              <Route path="/detailorders/:id" exact component={DetailOrdersContainer} />
-              <Route path="/editorders/:id" exact component={EditOrdersContainer} />
-=======
               <PrivateRoute path="/">
                 <Route path="/user" exact component={HomeContainer} />
                 <Route path="/create" exact component={CreateUserContainer} />
@@ -162,14 +113,13 @@ export default class App extends Component {
                 <Route path="/detailvideovr/:id" exact component={DetailVideovrContainer} />
                 <Route path="/createvideovr" exact component={CreateVideovrContainer} />
                 <Route path="/editvideovr/:id" exact component={EditVideovrContainer} />
-              </PrivateRoute>
-              
->>>>>>> 958f0983848d0389c9ecfeca7dd59e4dffe140a9
+
+                <Route path="/orders" exact component={OrdersContainer} />
+                <Route path="/detailorders/:id" exact component={DetailOrdersContainer} />
+                <Route path="/editorders/:id" exact component={EditOrdersContainer} />
+              </PrivateRoute>  
             </div>
           </Switch>
-            
-          
-          
         </BrowserRouter>
       </div>
     );

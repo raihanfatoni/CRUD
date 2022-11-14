@@ -30,8 +30,8 @@ class CreateVideovrContainer extends Component {
       }else {
         swal(
             "Video VR Created!",
-            "ID Kota: " +
-              this.props.getResponDataVideovr.city_id +
+            "ID Destinasi: " +
+              this.props.getResponDataVideovr.destination_id +
               " , Durasi : " +
               this.props.getResponDataVideovr.durasi,
             "success"

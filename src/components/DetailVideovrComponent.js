@@ -21,7 +21,7 @@ const DetailVideovrComponent = (props) => {
         <tr>
           <td width="200">ID Kota</td>
           <td width="10">:</td>
-          <td>{props.getVideovrDetail.city_id}</td>
+          <td>{props.getVideovrDetail.destination_id}</td>
         </tr>
         <tr>
           <td width="200">Link</td>

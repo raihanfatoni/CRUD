@@ -64,8 +64,8 @@ const VideovrComponent = (props) => {
       },
     },
     {
-      dataField: "city_id",
-      text: "ID Kota",
+      dataField: "destination_id",
+      text: "ID Destinasi",
       sort: true,
     },
     {

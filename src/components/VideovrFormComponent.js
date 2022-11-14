@@ -37,7 +37,7 @@ const renderField = ({
 const mapStateToProps = (state) => {
   return {
     initialValues : {
-      city_id : state.videovr.getVideovrDetail.city_id,
+      destination_id : state.videovr.getVideovrDetail.destination_id,
       link_video : state.videovr.getVideovrDetail.link_video,
       deskripsi : state.videovr.getVideovrDetail.deskripsi,
       durasi : state.videovr.getVideovrDetail.durasi,
@@ -55,9 +55,9 @@ class VideovrFormComponent extends Component {
             <FormGroup>
               <Field
                 type="text"
-                name="city_id"
+                name="destination_id"
                 component={renderField}
-                label="ID Kota :"
+                label="ID Destinasi :"
               />
             </FormGroup>
           </Col>
