@@ -117,12 +117,7 @@ export default class App extends Component {
                 <Route path="/orders" exact component={OrdersContainer} />
                 <Route path="/detailorders/:id" exact component={DetailOrdersContainer} />
                 <Route path="/editorders/:id" exact component={EditOrdersContainer} />
-<<<<<<< HEAD
               </PrivateRoute>  
-=======
-              </PrivateRoute>
-              
->>>>>>> 1913952e81ddbc5457c81ea7d3f906f1a96d33f3
             </div>
           </Switch>
         </BrowserRouter>

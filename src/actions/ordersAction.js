@@ -10,7 +10,12 @@ export const PUT_ORDERS_EDIT = "PUT_ORDERS_EDIT";
 export const getOrdersList = () => {
   return (dispatch) => {
     axios
-      .get("https://vitour-backend.herokuapp.com/api/order")
+      .get(
+        "https://vitour-backend.herokuapp.com/api/order",{
+          headers: {
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+          }
+        })
       .then(function (response) {
         dispatch({
           type: GET_ORDERS_LIST,
@@ -37,16 +42,26 @@ export const getOrdersDetail = (id) => {
   return (dispatch) => {
     axios
       .get(
-        "https://vitour-backend.herokuapp.com/api/order/" +id)
+        "https://vitour-backend.herokuapp.com/api/order/" +id,{
+          headers: {
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+          }
+        })
       .then(function (response) {
         dispatch({
           type: GET_ORDERS_DETAIL,
           payload: {
-            data: response.data.data[0],
+            data: {
+              order_id : response.data.data[0].order_id,
+              user_id : response.data.data[0].user_id,
+              total_price: response.data.data[0].total_price,
+              status: response.data.data[0].status,
+              response_midtrans: JSON.stringify(response.data.data[0].response_midtrans)
+            },
             errorMessage: false,
           },
         });
-        console.log(response.data)
+        console.log(response.data.data[0])
       })
       .catch(function (error) {
         dispatch({
@@ -66,8 +81,11 @@ export const putOrdersUpdate = (data, id) => {
     axios
       .put(
          "https://vitour-backend.herokuapp.com/api/order/"+id,
-        data
-      )
+        data,{
+          headers: {
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+          }
+        })
       .then(function (response) {
         console.log(response);
         
@@ -96,8 +114,11 @@ export const deleteOrders = (id) => {
   return (dispatch) => {
     axios
       .delete(
-         "https://vitour-backend.herokuapp.com/api/cities/"+id
-      )
+         "https://vitour-backend.herokuapp.com/api/order/"+id,{
+          headers: {
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+          }
+         })
       .then(function (response) {
         console.log(response);
         

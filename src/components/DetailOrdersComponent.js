@@ -34,7 +34,7 @@ const DetailOrdersComponent = (props) => {
           <td>{props.getOrdersDetail.status}</td>
         </tr>
         <tr>
-          <td width="50">Midtrans Response</td>
+          <td width="200">Midtrans Response</td>
           <td width="10">:</td>
           <td>{props.getOrdersDetail.response_midtrans}</td>
         </tr>
