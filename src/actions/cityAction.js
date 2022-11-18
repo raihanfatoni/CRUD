@@ -72,7 +72,7 @@ export const postCityCreate = (data) => {
         }
       )
       .then(function (response) {
-        console.log(response);
+        console.log(response.data.data);
         
         dispatch({
           type: POST_CITY_CREATE,
