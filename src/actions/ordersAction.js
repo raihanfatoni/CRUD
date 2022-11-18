@@ -24,7 +24,7 @@ export const getOrdersList = () => {
             errorMessage: false,
           },
         });
-        // console.log(response.data.data)
+        console.log(response.data.data)
       })
       .catch(function (error) {
         dispatch({

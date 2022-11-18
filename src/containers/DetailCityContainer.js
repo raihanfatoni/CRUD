@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Container } from "reactstrap";
-import BackComponent from "../components/BackComponent";
+import BackComponent from "../components/CityBackComponent";
 import { connect } from "react-redux";
 import { getCityDetail } from "../actions/cityAction";
 import DetailCityComponent from "../components/DetailCityComponent";

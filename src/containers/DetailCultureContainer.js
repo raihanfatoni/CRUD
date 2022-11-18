@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Container } from "reactstrap";
-import BackComponent from "../components/BackComponent";
+import BackComponent from "../components/CultureBackComponent";
 import { connect } from "react-redux";
 import { getCultureDetail } from "../actions/cultureAction";
 import DetailCultureComponent from "../components/DetailCultureComponent";

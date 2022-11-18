@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Container } from "reactstrap";
-import BackComponent from "../components/BackComponent";
+import BackComponent from "../components/OrdersBackComponent";
 import { connect } from "react-redux";
 import { getOrdersDetail } from "../actions/ordersAction";
 import DetailOrdersComponent from "../components/DetailOrdersComponent";
