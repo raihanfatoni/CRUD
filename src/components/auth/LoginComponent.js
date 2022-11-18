@@ -149,7 +149,7 @@ const Login = () => {
             setEmail('');
             setPassword('');
             setSuccess(true);
-            history.push("/");
+            history.push("/user");
             
         } catch (err) {
             if (!err?.response) {
