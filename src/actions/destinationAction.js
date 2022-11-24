@@ -39,11 +39,11 @@ export const getDestinationDetail = (id) => {
         dispatch({
           type: GET_DESTINATION_DETAIL,
           payload: {
-            data: response.data.data[0],
+            data: response.data.data,
             errorMessage: false,
           },
         });
-        console.log(response.data.data[0])
+        console.log(response.data.data)
       })
       .catch(function (error) {
         dispatch({
