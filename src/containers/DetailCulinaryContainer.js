@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Container } from "reactstrap";
-import BackComponent from "../components/BackComponent";
+import BackComponent from "../components/CulinaryBackComponent";
 import { connect } from "react-redux";
 import { getCulinaryDetail } from "../actions/culinaryAction";
 import DetailCulinaryComponent from "../components/DetailCulinaryComponent";

@@ -149,7 +149,7 @@ const Login = () => {
             setEmail('');
             setPassword('');
             setSuccess(true);
-            history.push("/");
+            history.push("/user");
             
         } catch (err) {
             if (!err?.response) {
@@ -197,13 +197,6 @@ const Login = () => {
                           />
                           <button className="btn btn-secondary btn-block">Login</button>
                       </form>
-                      <p>
-                          Need an Account?<br />
-                          <span>
-                              {/*put router link here*/}
-                              <a href="#" className="signup-btn">Sign Up</a>
-                          </span>
-                      </p>
                     </div>
                   </div>
                   
