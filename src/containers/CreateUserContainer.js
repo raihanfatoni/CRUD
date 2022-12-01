@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Container } from "reactstrap";
 import BackComponent from "../components/BackComponent";
-import FormComponent from "../components/FormComponent";
+import FormComponent from "../components/UserFormComponent";
 import { connect } from "react-redux";
 import { postUserCreate } from "../actions/userAction";
 import swal from "sweetalert";
