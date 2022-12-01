@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Container } from "reactstrap";
 import BackComponent from "../components/BackComponent";
 import { connect } from "react-redux";
-import FormComponent from "../components/FormComponent";
+import FormComponent from "../components/UserFormComponent";
 import { getUserDetail, putUserUpdate } from "../actions/userAction";
 import swal from "sweetalert";
 
@@ -29,10 +29,8 @@ class EditUserContainer extends Component {
       } else {
         swal(
           "User Updated!",
-          "Nama : " +
-            this.props.getResponDataUser.nama +
-            " , Umur : " +
-            this.props.getResponDataUser.umur,
+          "Success : " +
+            this.props.getResponDataUser.message,
           "success"
         );
       }
