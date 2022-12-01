@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Container } from "reactstrap";
-import BackComponent from "../components/VideovrBackComponent";
+import BackComponent from "../components/BackComponent";
 import { connect } from "react-redux";
 import { getVideovrDetail } from "../actions/videovrAction";
 import DetailVideovrComponent from "../components/DetailVideovrComponent";

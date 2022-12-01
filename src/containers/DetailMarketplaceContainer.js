@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Container } from "reactstrap";
-import BackComponent from "../components/MarketplaceBackComponent";
+import BackComponent from "../components/BackComponent";
 import { connect } from "react-redux";
 import { getMarketplaceDetail } from "../actions/marketplaceAction";
 import DetailMarketplaceComponent from "../components/DetailMarketplaceComponent";
