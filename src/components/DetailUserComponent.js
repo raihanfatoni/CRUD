@@ -13,25 +13,40 @@ const DetailUserComponent = (props) => {
   return (
     <Table striped>
       <tbody>
+      <tr>
+          <td width="200">ID</td>
+          <td width="10">:</td>
+          <td>{props.getUserDetail.user_id}</td>
+        </tr>
         <tr>
           <td width="200">Nama</td>
           <td width="10">:</td>
-          <td>{props.getUserDetail.nama}</td>
+          <td>{props.getUserDetail.name}</td>
         </tr>
         <tr>
-          <td width="200">Alamat</td>
+          <td width="200">Email</td>
           <td width="10">:</td>
-          <td>{props.getUserDetail.alamat}</td>
+          <td>{props.getUserDetail.email}</td>
         </tr>
         <tr>
-          <td width="200">Umur</td>
+          <td width="200">Role</td>
           <td width="10">:</td>
-          <td>{props.getUserDetail.umur}</td>
+          <td>{props.getUserDetail.role}</td>
         </tr>
         <tr>
-          <td width="200">No HP</td>
+          <td width="200">Address</td>
           <td width="10">:</td>
-          <td>{props.getUserDetail.nohp}</td>
+          <td>{props.getUserDetail.address}</td>
+        </tr>
+        <tr>
+          <td width="200">Handphone</td>
+          <td width="10">:</td>
+          <td>{props.getUserDetail.handphone}</td>
+        </tr>
+        <tr>
+          <td width="200">Profile Pic Link</td>
+          <td width="10">:</td>
+          <td><a href={props.getUserDetail.prof_pic_link}>{props.getUserDetail.prof_pic_link}</a></td>
         </tr>
 
       </tbody>
