@@ -10,12 +10,16 @@ export const PUT_USER_EDIT = "PUT_USER_EDIT";
 export const getUsersList = () => {
   return (dispatch) => {
     axios
-      .get("https://my-json-server.typicode.com/afifbasya/reactjs-redux/users")
+      .get("https://vitour-backend.herokuapp.com/api/user", {
+        headers: {
+          'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+        }
+      })
       .then(function (response) {
         dispatch({
           type: GET_USERS_LIST,
           payload: {
-            data: response.data,
+            data: response.data.data,
             errorMessage: false,
           },
         });
@@ -37,14 +41,18 @@ export const getUserDetail = (id) => {
   return (dispatch) => {
     axios
       .get(
-        "https://my-json-server.typicode.com/afifbasya/reactjs-redux/users/" +
-          id
+        "https://vitour-backend.herokuapp.com/api/user/" +
+          id, {
+            headers: {
+              'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+            }
+          }
       )
       .then(function (response) {
         dispatch({
           type: GET_USER_DETAIL,
           payload: {
-            data: response.data,
+            data: response.data.data,
             errorMessage: false,
           },
         });
@@ -96,8 +104,12 @@ export const putUserUpdate = (data, id) => {
   return (dispatch) => {
     axios
       .put(
-         "http://my-json-server.typicode.com/afifbasya/reactjs-redux/users/"+id,
-        data
+         "https://vitour-backend.herokuapp.com/api/user/"+id,
+        data, {
+          headers: {
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+          }
+        }
       )
       .then(function (response) {
         console.log(response);
@@ -127,7 +139,11 @@ export const deleteUser = (id) => {
   return (dispatch) => {
     axios
       .delete(
-         "http://my-json-server.typicode.com/afifbasya/reactjs-redux/users/"+id
+         "https://vitour-backend.herokuapp.com/api/user/"+id, {
+          headers: {
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+          }
+        }
       )
       .then(function (response) {
         console.log(response);
@@ -141,23 +157,23 @@ export const deleteUser = (id) => {
 };
 
 
-export const deleteDataUser = () => {
-  return (dispatch) => {
-    dispatch({
-      type: GET_USER_DETAIL,
-      payload: {
-        data: false,
-        errorMessage: false,
-      },
-    });
+// export const deleteDataUser = () => {
+//   return (dispatch) => {
+//     dispatch({
+//       type: GET_USER_DETAIL,
+//       payload: {
+//         data: false,
+//         errorMessage: false,
+//       },
+//     });
 
 
-    dispatch({
-      type: POST_USER_CREATE,
-      payload: {
-        data: false,
-        errorMessage: false,
-      },
-    });
-  };
-};
+//     dispatch({
+//       type: POST_USER_CREATE,
+//       payload: {
+//         data: false,
+//         errorMessage: false,
+//       },
+//     });
+//   };
+// };
