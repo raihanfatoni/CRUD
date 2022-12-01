@@ -75,7 +75,7 @@ export default class App extends Component {
               {/* {console.log(isLogin)} */}
               <PrivateRoute path="/">
                 <Route path="/user" exact component={UserContainer} />
-                <Route path="/create" exact component={CreateUserContainer} />
+                {/* <Route path="/create" exact component={CreateUserContainer} /> */}
                 <Route path="/detail/:id" exact component={DetailUserContainer} />
                 <Route path="/edit/:id" exact component={EditUserContainer} />
 
