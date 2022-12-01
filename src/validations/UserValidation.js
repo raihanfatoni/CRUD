@@ -1,21 +1,21 @@
 const UserValidation = (values) => {
   const errors = {};
 
-  if (!values.nama || values.nama === "") {
+  if (!values.name || values.name === "") {
     errors.nama = "Nama harus diisi";
   }
 
-  if (!values.umur || values.umur === "") {
-    errors.umur = "Umur harus diisi";
+  if (!values.role || values.role === "") {
+    errors.umur = "Role harus diisi";
   }
 
-  if (!values.alamat || values.alamat === "") {
-    errors.alamat = "Alamat harus diisi";
-  }
+  // if (!values.address || values.address === "") {
+  //   errors.alamat = "Alamat harus diisi";
+  // }
 
-  if (!values.nohp || values.nohp === "") {
-    errors.nohp = "No HP harus diisi";
-  }
+  // if (!values.handphone || values.handphone === "") {
+  //   errors.nohp = "No HP harus diisi";
+  // }
 
   return errors
 };
