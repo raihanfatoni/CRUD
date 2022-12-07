@@ -10,7 +10,7 @@ export const PUT_CITY_EDIT = "PUT_CITY_EDIT";
 export const getCityList = () => {
   return (dispatch) => {
     axios
-      .get("https://vitour-backend.herokuapp.com/api/cities")
+      .get(process.env.REACT_APP_BASE_URL + "/api/cities")
       .then(function (response) {
         dispatch({
           type: GET_CITY_LIST,
@@ -37,7 +37,7 @@ export const getCityDetail = (id) => {
   return (dispatch) => {
     axios
       .get(
-        "https://vitour-backend.herokuapp.com/api/cities/" +id)
+        process.env.REACT_APP_BASE_URL + "/api/cities/" +id)
       .then(function (response) {
         dispatch({
           type: GET_CITY_DETAIL,
@@ -64,7 +64,7 @@ export const postCityCreate = (data) => {
   return (dispatch) => {
     axios
       .post(
-         "https://vitour-backend.herokuapp.com/api/cities",
+         process.env.REACT_APP_BASE_URL + "/api/cities",
         data, {
           headers: {
             'Authorization': `Bearer ${sessionStorage.getItem('token')}`
@@ -98,7 +98,7 @@ export const putCityUpdate = (data, id) => {
   return (dispatch) => {
     axios
       .put(
-         "https://vitour-backend.herokuapp.com/api/cities/"+id,
+         process.env.REACT_APP_BASE_URL + "/api/cities/"+id,
         data, {
           headers: {
             'Authorization': `Bearer ${sessionStorage.getItem('token')}`
@@ -133,7 +133,7 @@ export const deleteCity = (id) => {
   return (dispatch) => {
     axios
       .delete(
-         "https://vitour-backend.herokuapp.com/api/cities/"+id, {
+         process.env.REACT_APP_BASE_URL + "/api/cities/"+id, {
           headers: {
             'Authorization': `Bearer ${sessionStorage.getItem('token')}`
           }

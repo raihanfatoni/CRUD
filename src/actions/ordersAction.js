@@ -11,7 +11,7 @@ export const getOrdersList = () => {
   return (dispatch) => {
     axios
       .get(
-        "https://vitour-backend.herokuapp.com/api/order",{
+        process.env.REACT_APP_BASE_URL + "/api/order",{
           headers: {
             'Authorization': `Bearer ${sessionStorage.getItem('token')}`
           }
@@ -42,7 +42,7 @@ export const getOrdersDetail = (id) => {
   return (dispatch) => {
     axios
       .get(
-        "https://vitour-backend.herokuapp.com/api/order/" +id,{
+        process.env.REACT_APP_BASE_URL + "/api/order/" +id,{
           headers: {
             'Authorization': `Bearer ${sessionStorage.getItem('token')}`
           }
@@ -80,7 +80,7 @@ export const putOrdersUpdate = (data, id) => {
   return (dispatch) => {
     axios
       .put(
-         "https://vitour-backend.herokuapp.com/api/order/"+id,
+         process.env.REACT_APP_BASE_URL + "/api/order/"+id,
         data,{
           headers: {
             'Authorization': `Bearer ${sessionStorage.getItem('token')}`
@@ -114,7 +114,7 @@ export const deleteOrders = (id) => {
   return (dispatch) => {
     axios
       .delete(
-         "https://vitour-backend.herokuapp.com/api/order/"+id,{
+         process.env.REACT_APP_BASE_URL + "/api/order/"+id,{
           headers: {
             'Authorization': `Bearer ${sessionStorage.getItem('token')}`
           }

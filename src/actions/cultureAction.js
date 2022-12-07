@@ -7,7 +7,7 @@ export const PUT_CULTURE_EDIT = "PUT_CULTURE_EDIT";
 export const getCultureList = () => {
   return (dispatch) => {
     axios
-      .get("https://vitour-backend.herokuapp.com/api/city/cultures")
+      .get(process.env.REACT_APP_BASE_URL + "/api/city/cultures")
       .then(function (response) {
         dispatch({
           type: GET_CULTURE_LIST,
@@ -34,7 +34,7 @@ export const getCultureDetail = (id) => {
   return (dispatch) => {
     axios
       .get(
-        "https://vitour-backend.herokuapp.com/api/city/cultures/" +id)
+        process.env.REACT_APP_BASE_URL + "/api/city/cultures/" +id)
       .then(function (response) {
         dispatch({
           type: GET_CULTURE_DETAIL,
@@ -61,7 +61,7 @@ export const postCultureCreate = (data) => {
   return (dispatch) => {
     axios
       .post(
-         "https://vitour-backend.herokuapp.com/api/city/cultures",
+         process.env.REACT_APP_BASE_URL + "/api/city/cultures",
         data, {
           headers: {
             'Authorization': `Bearer ${sessionStorage.getItem('token')}`
@@ -95,7 +95,7 @@ export const putCultureUpdate = (data, id) => {
   return (dispatch) => {
     axios
       .put(
-         "https://vitour-backend.herokuapp.com/api/city/cultures/"+id,
+         process.env.REACT_APP_BASE_URL + "/api/city/cultures/"+id,
         data, {
           headers: {
             'Authorization': `Bearer ${sessionStorage.getItem('token')}`
@@ -130,7 +130,7 @@ export const deleteCulture = (id) => {
   return (dispatch) => {
     axios
       .delete(
-         "https://vitour-backend.herokuapp.com/api/city/cultures/"+id, {
+         process.env.REACT_APP_BASE_URL + "/api/city/cultures/"+id, {
           headers: {
             'Authorization': `Bearer ${sessionStorage.getItem('token')}`
           }

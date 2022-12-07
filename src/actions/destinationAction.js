@@ -7,7 +7,7 @@ export const PUT_DESTINATION_EDIT = "PUT_DESTINATION_EDIT";
 export const getDestinationList = () => {
   return (dispatch) => {
     axios
-      .get("https://vitour-backend.herokuapp.com/api/city/destinations")
+      .get(process.env.REACT_APP_BASE_URL + "/api/city/destinations")
       .then(function (response) {
         dispatch({
           type: GET_DESTINATION_LIST,
@@ -34,7 +34,7 @@ export const getDestinationDetail = (id) => {
   return (dispatch) => {
     axios
       .get(
-        "https://vitour-backend.herokuapp.com/api/city/destinations/" +id)
+        process.env.REACT_APP_BASE_URL + "/api/city/destinations/" +id)
       .then(function (response) {
         dispatch({
           type: GET_DESTINATION_DETAIL,
@@ -61,7 +61,7 @@ export const postDestinationCreate = (data) => {
   return (dispatch) => {
     axios
       .post(
-         "https://vitour-backend.herokuapp.com/api/city/destinations",
+         process.env.REACT_APP_BASE_URL + "/api/city/destinations",
         data, {
           headers: {
             'Authorization': `Bearer ${sessionStorage.getItem('token')}`
@@ -95,7 +95,7 @@ export const putDestinationUpdate = (data, id) => {
   return (dispatch) => {
     axios
       .put(
-         "https://vitour-backend.herokuapp.com/api/city/destinations/"+id,
+         process.env.REACT_APP_BASE_URL + "/api/city/destinations/"+id,
         data, {
           headers: {
             'Authorization': `Bearer ${sessionStorage.getItem('token')}`
@@ -130,7 +130,7 @@ export const deleteDestination = (id) => {
   return (dispatch) => {
     axios
       .delete(
-         "https://vitour-backend.herokuapp.com/api/city/destinations/"+id, {
+         process.env.REACT_APP_BASE_URL + "/api/city/destinations/"+id, {
           headers: {
             'Authorization': `Bearer ${sessionStorage.getItem('token')}`
           }

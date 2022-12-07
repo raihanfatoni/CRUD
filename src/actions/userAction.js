@@ -10,7 +10,7 @@ export const PUT_USER_EDIT = "PUT_USER_EDIT";
 export const getUsersList = () => {
   return (dispatch) => {
     axios
-      .get("https://vitour-backend.herokuapp.com/api/user", {
+      .get(process.env.REACT_APP_BASE_URL + "/api/user", {
         headers: {
           'Authorization': `Bearer ${sessionStorage.getItem('token')}`
         }
@@ -41,7 +41,7 @@ export const getUserDetail = (id) => {
   return (dispatch) => {
     axios
       .get(
-        "https://vitour-backend.herokuapp.com/api/user/" +
+        process.env.REACT_APP_BASE_URL + "/api/user/" +
           id, {
             headers: {
               'Authorization': `Bearer ${sessionStorage.getItem('token')}`
@@ -104,7 +104,7 @@ export const putUserUpdate = (data, id) => {
   return (dispatch) => {
     axios
       .put(
-         "https://vitour-backend.herokuapp.com/api/user/"+id,
+         process.env.REACT_APP_BASE_URL + "/api/user/"+id,
         data, {
           headers: {
             'Authorization': `Bearer ${sessionStorage.getItem('token')}`
@@ -139,7 +139,7 @@ export const deleteUser = (id) => {
   return (dispatch) => {
     axios
       .delete(
-         "https://vitour-backend.herokuapp.com/api/user/"+id, {
+         process.env.REACT_APP_BASE_URL + "/api/user/"+id, {
           headers: {
             'Authorization': `Bearer ${sessionStorage.getItem('token')}`
           }

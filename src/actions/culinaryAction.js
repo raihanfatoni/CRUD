@@ -10,7 +10,7 @@ export const PUT_CULINARY_EDIT = "PUT_CULINARY_EDIT";
 export const getCulinaryList = () => {
   return (dispatch) => {
     axios
-      .get("https://vitour-backend.herokuapp.com/api/city/culinaries")
+      .get(process.env.REACT_APP_BASE_URL + "/api/city/culinaries")
       .then(function (response) {
         dispatch({
           type: GET_CULINARY_LIST,
@@ -37,7 +37,7 @@ export const getCulinaryDetail = (id) => {
   return (dispatch) => {
     axios
       .get(
-        "https://vitour-backend.herokuapp.com/api/city/culinaries/" +id)
+        process.env.REACT_APP_BASE_URL + "/api/city/culinaries/" +id)
       .then(function (response) {
         dispatch({
           type: GET_CULINARY_DETAIL,
@@ -64,7 +64,7 @@ export const postCulinaryCreate = (data) => {
   return (dispatch) => {
     axios
       .post(
-         "https://vitour-backend.herokuapp.com/api/city/culinaries",
+         process.env.REACT_APP_BASE_URL + "/api/city/culinaries",
         data, {
           headers: {
             'Authorization': `Bearer ${sessionStorage.getItem('token')}`
@@ -98,7 +98,7 @@ export const putCulinaryUpdate = (data, id) => {
   return (dispatch) => {
     axios
       .put(
-         "https://vitour-backend.herokuapp.com/api/city/culinaries/"+id,
+         process.env.REACT_APP_BASE_URL + "/api/city/culinaries/"+id,
         data, {
           headers: {
             'Authorization': `Bearer ${sessionStorage.getItem('token')}`
@@ -133,7 +133,7 @@ export const deleteCulinary = (id) => {
   return (dispatch) => {
     axios
       .delete(
-         "https://vitour-backend.herokuapp.com/api/city/culinaries/"+id, {
+         process.env.REACT_APP_BASE_URL + "/api/city/culinaries/"+id, {
           headers: {
             'Authorization': `Bearer ${sessionStorage.getItem('token')}`
           }

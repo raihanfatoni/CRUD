@@ -7,7 +7,7 @@ export const PUT_VIDEOVR_EDIT = "PUT_VIDEOVR_EDIT";
 export const getVideovrList = () => {
   return (dispatch) => {
     axios
-      .get("https://vitour-backend.herokuapp.com/api/city/videovrs")
+      .get(process.env.REACT_APP_BASE_URL + "/api/city/videovrs")
       .then(function (response) {
         dispatch({
           type: GET_VIDEOVR_LIST,
@@ -34,7 +34,7 @@ export const getVideovrDetail = (id) => {
   return (dispatch) => {
     axios
       .get(
-        "https://vitour-backend.herokuapp.com/api/city/videovrs/" +id)
+        process.env.REACT_APP_BASE_URL + "/api/city/videovrs/" +id)
       .then(function (response) {
         dispatch({
           type: GET_VIDEOVR_DETAIL,
@@ -61,7 +61,7 @@ export const postVideovrCreate = (data) => {
   return (dispatch) => {
     axios
       .post(
-         "https://vitour-backend.herokuapp.com/api/city/videovrs",
+         process.env.REACT_APP_BASE_URL + "/api/city/videovrs",
         data, {
           headers: {
             'Authorization': `Bearer ${sessionStorage.getItem('token')}`
@@ -95,7 +95,7 @@ export const putVideovrUpdate = (data, id) => {
   return (dispatch) => {
     axios
       .put(
-         "https://vitour-backend.herokuapp.com/api/city/videovrs/"+id,
+         process.env.REACT_APP_BASE_URL + "/api/city/videovrs/"+id,
         data, {
           headers: {
             'Authorization': `Bearer ${sessionStorage.getItem('token')}`
@@ -130,7 +130,7 @@ export const deleteVideovr = (id) => {
   return (dispatch) => {
     axios
       .delete(
-         "https://vitour-backend.herokuapp.com/api/city/videovrs/"+id, {
+         process.env.REACT_APP_BASE_URL + "/api/city/videovrs/"+id, {
           headers: {
             'Authorization': `Bearer ${sessionStorage.getItem('token')}`
           }

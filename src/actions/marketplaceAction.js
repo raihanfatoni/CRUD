@@ -7,7 +7,7 @@ export const PUT_MARKETPLACE_EDIT = "PUT_MARKETPLACE_EDIT";
 export const getMarketplaceList = () => {
   return (dispatch) => {
     axios
-      .get("https://vitour-backend.herokuapp.com/api/city/merchandise/marketplace")
+      .get(process.env.REACT_APP_BASE_URL + "/api/city/merchandise/marketplace")
       .then(function (response) {
         dispatch({
           type: GET_MARKETPLACE_LIST,
@@ -34,7 +34,7 @@ export const getMarketplaceDetail = (id) => {
   return (dispatch) => {
     axios
       .get(
-        "https://vitour-backend.herokuapp.com/api/city/merchandise/marketplace/" +id)
+        process.env.REACT_APP_BASE_URL + "/api/city/merchandise/marketplace/" +id)
       .then(function (response) {
         dispatch({
           type: GET_MARKETPLACE_DETAIL,
@@ -61,7 +61,7 @@ export const postMarketplaceCreate = (data) => {
   return (dispatch) => {
     axios
       .post(
-         "https://vitour-backend.herokuapp.com/api/city/merchandise/marketplace",
+         process.env.REACT_APP_BASE_URL + "/api/city/merchandise/marketplace",
         data, {
           headers: {
             'Authorization': `Bearer ${sessionStorage.getItem('token')}`
@@ -95,7 +95,7 @@ export const putMarketplaceUpdate = (data, id) => {
   return (dispatch) => {
     axios
       .put(
-         "https://vitour-backend.herokuapp.com/api/city/merchandise/marketplace/"+id,
+         process.env.REACT_APP_BASE_URL + "/api/city/merchandise/marketplace/"+id,
         data, {
           headers: {
             'Authorization': `Bearer ${sessionStorage.getItem('token')}`
@@ -130,7 +130,7 @@ export const deleteMarketplace = (id) => {
   return (dispatch) => {
     axios
       .delete(
-         "https://vitour-backend.herokuapp.com/api/city/merchandise/marketplace/"+id, {
+         process.env.REACT_APP_BASE_URL + "/api/city/merchandise/marketplace/"+id, {
           headers: {
             'Authorization': `Bearer ${sessionStorage.getItem('token')}`
           }

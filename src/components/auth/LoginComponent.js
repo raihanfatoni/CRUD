@@ -95,7 +95,7 @@ import React, { useRef, useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
-const LOGIN_URL = 'https://vitour-backend.herokuapp.com/api/login';
+const LOGIN_URL = process.env.REACT_APP_BASE_URL + '/api/login';
 
 // const mapStateToProps = (state) => {
 //   return {

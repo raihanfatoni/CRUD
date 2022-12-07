@@ -7,7 +7,7 @@ export const PUT_MERCHANDISE_EDIT = "PUT_MERCHANDISE_EDIT";
 export const getMerchandiseList = () => {
   return (dispatch) => {
     axios
-      .get("https://vitour-backend.herokuapp.com/api/city/merchandises")
+      .get(process.env.REACT_APP_BASE_URL + "/api/city/merchandises")
       .then(function (response) {
         dispatch({
           type: GET_MERCHANDISE_LIST,
@@ -34,7 +34,7 @@ export const getMerchandiseDetail = (id) => {
   return (dispatch) => {
     axios
       .get(
-        "https://vitour-backend.herokuapp.com/api/city/merchandises/" +id)
+        process.env.REACT_APP_BASE_URL + "/api/city/merchandises/" +id)
       .then(function (response) {
         dispatch({
           type: GET_MERCHANDISE_DETAIL,
@@ -61,7 +61,7 @@ export const postMerchandiseCreate = (data) => {
   return (dispatch) => {
     axios
       .post(
-         "https://vitour-backend.herokuapp.com/api/city/merchandises/", 
+         process.env.REACT_APP_BASE_URL + "/api/city/merchandises/", 
         data, {
           headers: {
             'Authorization': `Bearer ${sessionStorage.getItem('token')}`
@@ -95,7 +95,7 @@ export const putMerchandiseUpdate = (data, id) => {
   return (dispatch) => {
     axios
       .put(
-         "https://vitour-backend.herokuapp.com/api/city/merchandises/"+id,
+         process.env.REACT_APP_BASE_URL + "/api/city/merchandises/"+id,
         data, {
           headers: {
             'Authorization': `Bearer ${sessionStorage.getItem('token')}`
@@ -130,7 +130,7 @@ export const deleteMerchandise = (id) => {
   return (dispatch) => {
     axios
       .delete(
-         "https://vitour-backend.herokuapp.com/api/city/merchandises/"+id, {
+         process.env.REACT_APP_BASE_URL + "/api/city/merchandises/"+id, {
           headers: {
             'Authorization': `Bearer ${sessionStorage.getItem('token')}`
           }
